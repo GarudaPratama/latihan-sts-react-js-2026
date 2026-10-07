@@ -31,21 +31,26 @@ function Home() {
         transition={{ duration: 0.5, delay: 0.3 }}
         className="flex gap-12"
       >
-        <ul className="divide-y divide-[#1f1f23]">
+        <motion.ul className="grid grid-cols-1 md:grid-cols-3 gap-5 w-full">
           {books.map((book) => (
-            <li key={book.id} className="group">
+            <li
+              key={book.id}
+              className="bg-white border border-slate-200/90 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-200 group"
+            >
               <a
-                href={`/books/${book.id}`}
-                className="flex items-center justify-between py-3.5 text-xs text-[#a1a1aa] hover:text-[#f4f4f2] hover:pl-2 transition-all duration-150 uppercase tracking-widest"
+                href={`/detail/${book.id}`}
+                className="flex flex-col justify-between h-32 text-slate-900 no-underline"
               >
-                <span>{book.name}</span>
-                <span className="text-[#52525b] group-hover:text-[#f4f4f2] transition-colors">
+                <span className="font-bold text-base md:text-lg text-slate-900 group-hover:text-black transition-colors">
+                  {book.name}
+                </span>
+                <span className="text-xs font-semibold text-slate-900 flex items-center before:content-['Lihat_detail'] before:mr-1.5 group-hover:translate-x-1 transition-transform duration-200">
                   →
                 </span>
               </a>
             </li>
           ))}
-        </ul>
+        </motion.ul>
       </motion.div>
     </div>
   );
