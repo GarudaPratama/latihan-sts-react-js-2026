@@ -7,7 +7,7 @@ function AppLayout() {
     <div className=''>
       <Navbar />
 
-      <main className=''>
+      <main className='px-36 py-12'>
         <Outlet />
       </main>
     </div>
